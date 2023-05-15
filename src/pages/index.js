@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,29 +15,29 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.grid}>
+        <div>
           <Link href="/login">
-            <h2 className={inter.className}>
+            <h2>
               User Login
             </h2>
-            <p className={inter.className}>
+            <p>
               Existing user login
             </p>
           </Link>  
           <Link href="/createUser">
-            <h2 className={inter.className}>
+            <h2>
               New user?
             </h2>
-            <p className={inter.className}>
+            <p>
               Create an account here
             </p>
           </Link>
 
           <Link href="/admin">
-            <h2 className={inter.className}>
+            <h2>
               Administrators
             </h2>
-            <p className={inter.className}>
+            <p>
               Login here
             </p>
           </Link>
