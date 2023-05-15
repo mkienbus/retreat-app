@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -14,44 +15,31 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.grid}>
-          <a
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/login">
             <h2 className={inter.className}>
-              User Login <span>-&gt;</span>
+              User Login
             </h2>
             <p className={inter.className}>
               Existing user login
             </p>
-          </a>
-
-          <a
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Link>  
+          <Link href="/createUser">
             <h2 className={inter.className}>
-              New user? <span>-&gt;</span>
+              New user?
             </h2>
             <p className={inter.className}>
               Create an account here
             </p>
-          </a>
+          </Link>
 
-          <a
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/admin">
             <h2 className={inter.className}>
-              Administrators <span>-&gt;</span>
+              Administrators
             </h2>
             <p className={inter.className}>
               Login here
             </p>
-          </a>
+          </Link>
         </div>
       </main>
     </>
