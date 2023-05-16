@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <article>
-        <Link href="/login">
+        <Link href="/Login">
           <h2>
             User Login
           </h2>
@@ -22,7 +22,7 @@ export default function Home() {
         </Link>
       </article>  
       <article>
-        <Link href="/createUser">
+        <Link href="/CreateUser">
           <h2>
             New user?
           </h2>
