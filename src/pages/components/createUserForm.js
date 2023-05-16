@@ -9,7 +9,7 @@ export default function CreateUserForm(){
     const [error, setError] = useState("");
 
     function handleSubmit(){
-
+        console.log("submitted")
     }
 
     return(
@@ -22,15 +22,15 @@ export default function CreateUserForm(){
                 <input 
                 type = "text" 
                 id = "signupFirstName" 
-                value = {fName} 
-                onChange = {e => setFirstName(e.target.value)}/>
+                value = {firstName} 
+                onChange = {(e) => setFirstName(e.target.value)}/>
 
                 <label htmlFor="signupLastName">Last Name:</label>
                 <input 
                 type = "text" 
                 id = "signupLastName" 
-                value = {lName} 
-                onChange = {e => setLName(e.target.value)}/>
+                value = {lastName} 
+                onChange = {e => setLastName(e.target.value)}/>
 
                 <label htmlFor="password">Password: </label>
                 <input
