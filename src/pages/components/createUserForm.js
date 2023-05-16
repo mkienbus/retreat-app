@@ -4,6 +4,7 @@ import styles from '@/styles/createUserForm.module.css'
 export default function CreateUserForm(){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [error, setError] = useState("");
@@ -32,22 +33,29 @@ export default function CreateUserForm(){
                 value = {lastName} 
                 onChange = {e => setLastName(e.target.value)}/>
 
+                <label htmlFor="email">Email: </label>
+                <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
+                <br></br>
+
                 <label htmlFor="password">Password: </label>
                 <input
                 type="password"
-                id="password2"
+                id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
                 />
                 <br></br>
-                <label htmlFor="password">Password Confirmation:</label>
+                <label htmlFor="password-confirmation">Password Confirmation:</label>
                 <input
                 type="password"
-                id="password_confirmation"
+                id="password-confirmation"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
-                autoComplete="current-password"
                 />
                 <br></br>
                 <button type="Submit">Submit</button>
