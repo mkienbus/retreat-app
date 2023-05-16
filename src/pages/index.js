@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import LoginForm from './components/LoginForm'
 import styles from '@/styles/Home.module.css'
 
 export default function Home() {
@@ -12,14 +13,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <article>
-        <Link href="/Login">
-          <h2>
-            User Login
-          </h2>
-          <h4>
-            Existing user login
-          </h4>
-        </Link>
+        <div className="grid">
+          <div>
+            <h2>
+              User Login
+            </h2>
+            <h4>
+              Existing user login
+            </h4>
+          </div>
+          <div><LoginForm /></div>
+        </div>
       </article>  
       <article>
         <Link href="/CreateUser">
@@ -32,7 +36,7 @@ export default function Home() {
         </Link>
       </article>
       <article>
-        <Link href="/admin">
+        <Link href="/Admin">
           <h2>
             Administrators
           </h2>
