@@ -13,7 +13,7 @@ export default function LoginForm(){
 
     return(
         <>
-        <div id = "login">
+            <div className={styles.loginFormContainer}>
                 <form onSubmit = {handleSubmit}>
                     {/* {error ? <span>{error}</span> : <span></span>} */}
                     <br></br>
@@ -27,6 +27,7 @@ export default function LoginForm(){
                     <label htmlFor="password">Password: </label>
                     <input
                     type = "password"
+                    id = "password"
                     value = {password}
                     onChange = {e => setPassword(e.target.value)}/>
                     <br></br>

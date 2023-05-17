@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <article>
-        <div className="grid">
+        <div className={styles.existingLoginParent}>
           <div>
             <h2>
               User Login
@@ -22,28 +22,34 @@ export default function Home() {
               Existing user login
             </h4>
           </div>
-          <div><LoginForm /></div>
+          <div>
+            <LoginForm />
+          </div>
         </div>
       </article>  
       <article>
-        <Link href="/CreateUser">
-          <h2>
-            New user?
-          </h2>
-          <h4>
-            Create an account here
-          </h4>
-        </Link>
+        <div className={styles.createUserParent}>
+          <Link href="/CreateUser">
+            <h2>
+              New user?
+            </h2>
+            <h4>
+              Create an account here
+            </h4>
+          </Link>
+        </div>
       </article>
       <article>
-        <Link href="/Admin">
-          <h2>
-            Administrators
-          </h2>
-          <h4>
-            Login here
-          </h4>
-        </Link>
+        <div className={styles.adminLoginParent}>
+          <Link href="/Admin">
+            <h2>
+              Administrators
+            </h2>
+            <h4>
+              Login here
+            </h4>
+          </Link>
+        </div>
       </article>
     </>
   )

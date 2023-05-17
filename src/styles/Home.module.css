@@ -6,3 +6,20 @@
   padding: 6rem;
   min-height: 100vh;
 } */
+
+/* either figure out why margin: auto is not working or
+use media queries to get the elements to sit around: 
+  desktop: margin-left: 35%
+  mobile: margin-left: 20% */
+
+.existingLoginParent{
+  margin-left: 35%;
+}
+
+.createUserParent{
+  margin-left: 35%;
+}
+
+.adminLoginParent{
+  margin-left: 35%;
+}
