@@ -16,11 +16,8 @@ export default function Home() {
         <div className={styles.existingLoginParent}>
           <div>
             <h2>
-              User Login
-            </h2>
-            <h4>
               Existing user login
-            </h4>
+            </h2>
           </div>
           <div>
             <LoginForm />
