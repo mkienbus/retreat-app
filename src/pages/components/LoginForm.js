@@ -3,13 +3,14 @@ import styles from '@/styles/loginForm.module.css'
 
 export default function LoginForm(){
 
+    const [user, setUser] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch('/login',{
+        fetch("https://3953e582-af0f-4061-86bd-2043f989be0e.mock.pstmn.io",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -20,7 +21,8 @@ export default function LoginForm(){
             })
         }).then(r => {
             if(r.ok){
-                r.json().then(user => setUser(user))
+                // r.json().then(user => setUser(user))
+                console.log(r)
             }
             else {
                 r.json().then(error => setError(error.error)).then(setEmail(''),setPassword(''))
