@@ -6,13 +6,10 @@ export default function Admin(){
 
     return(
         <>
+            <Link href="/">Home</Link>
             <div className = {styles.adminLogin}>
-                <Link href="/">Home</Link>
                 <h2>Administrator portal</h2>
                 <LoginForm />
-                <footer>
-                    <Link href="/">Logout</Link>
-                </footer>
             </div>
         </>
     )
