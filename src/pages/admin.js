@@ -11,6 +11,11 @@ export default function Admin(){
                 <h2>Administrator portal</h2>
                 <LoginForm />
             </div>
+            <footer>
+                Need to register as an administrator?
+                <br/>
+                Contact webmaster <Link href="/ContactWebmaster">here</Link>
+            </footer>
         </>
     )
 }
