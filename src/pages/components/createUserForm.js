@@ -50,6 +50,7 @@ export default function CreateUserForm(){
                     onChange={(e) => setPassword(e.target.value)}
                     />
                     <br></br>
+                    {/* check password/password confirmation match on front end before submission */}
                     <label htmlFor="password-confirmation">Password Confirmation:</label>
                     <input
                     type="password"
