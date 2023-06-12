@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import CreateUserForm from './components/CreateUserForm'
+import AuthForm from './components/AuthForm'
 import styles from '@/styles/createUser.module.css'
+import { Auth } from '@supabase/auth-ui-react'
 
 export default function CreateUser(){
 
@@ -8,7 +10,8 @@ export default function CreateUser(){
         <>
             <Link href="/">Home</Link>
             <div className={styles.createUserFormParent}>
-                <CreateUserForm />
+                <AuthForm />
+                {/* <CreateUserForm /> */}
             </div>
         </>
     )
