@@ -26,7 +26,7 @@ export default function Home() {
       </article>  
       <article>
         <div className={styles.createUserParent}>
-          <Link href="/CreateUser">
+          <Link href="/pre-auth/CreateUser">
             <h2>
               New user?
             </h2>
@@ -38,7 +38,7 @@ export default function Home() {
       </article>
       <article>
         <div className={styles.adminLoginParent}>
-          <Link href="/Admin">
+          <Link href="/pre-auth/Admin">
             <h2>
               Administrators
             </h2>

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LoginForm from './components/LoginForm'
+import LoginForm from '../components/LoginForm'
 import styles from '@/styles/admin.module.css'
 
 export default function Admin(){
@@ -14,7 +14,7 @@ export default function Admin(){
             <footer>
                 Need to register as an administrator?
                 <br/>
-                Contact webmaster <Link href="/ContactWebmaster">here</Link>
+                Contact webmaster <Link href="/pre-auth/ContactWebmaster">here</Link>
             </footer>
         </>
     )
