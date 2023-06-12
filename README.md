@@ -2,7 +2,7 @@
 An application for users to login, register, and pay for a retreat
 
 ## Technologies used:
-Next.js, Supabase, Material UI, Pico, and Swipe
+Next.js, Supabase, Pico, and Swipe
 
 <!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
