@@ -4,6 +4,13 @@ An application for users to login, register, and pay for a retreat
 ## Technologies used:
 Next.js, Supabase, Pico, and Swipe
 
+## To run front end application:
+- Clone repository to local with `git clone <snippet>`
+- `cd` into project's root directory
+- Run `npm install`
+- Run `npm run dev`
+- Navigate to `localhost:3000` on your browser of choice
+
 <!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
