@@ -16,6 +16,10 @@ use media queries to get the elements to sit around:
   margin-left: 35%;
 }
 
+.loginForm{
+  max-width: 400px;
+}
+
 .createUserParent{
   margin-left: 35%;
 }

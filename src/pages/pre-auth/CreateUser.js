@@ -4,6 +4,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
+import styles from '@/styles/createUserForm.module.css'
 
 export default function Login() {
     const [firstName, setFirstName] = useState('')
@@ -25,7 +26,7 @@ export default function Login() {
     })
     router.refresh()
   }
-
+//  REMOVED SIGN IN AND SIGN OUT FROM THIS SECTION 
 //   const handleSignIn = async () => {
 //     await supabase.auth.signInWithPassword({
 //       email,
@@ -42,19 +43,21 @@ export default function Login() {
   return (
     <>
         <Link href="/">Home</Link>
-        <input placeholder="First name" name="firstName" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
-        <input placeholder="Last name" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} />
-        <input placeholder="Email address" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
-        <input
-            placeholder="Password (minimum of 6 characters)"
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-        />
-        <button onClick={handleSignUp}>Sign up</button>
-        {/* <button onClick={handleSignIn}>Sign in</button> */}
-        {/* <button onClick={handleSignOut}>Sign out</button> */}
+        <div className={styles.formContainer}>
+            <input placeholder="First name" name="firstName" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
+            <input placeholder="Last name" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} />
+            <input placeholder="Email address" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <input
+                placeholder="Password (minimum of 6 characters)"
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+            />
+            <button onClick={handleSignUp}>Sign up</button>
+            {/* <button onClick={handleSignIn}>Sign in</button> */}
+            {/* <button onClick={handleSignOut}>Sign out</button> */}
+        </div>
     </>
   )
 }

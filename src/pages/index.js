@@ -20,7 +20,7 @@ export default function Home() {
               Existing user login
             </h2>
           </div>
-          <div>
+          <div className={styles.loginForm}>
             <LoginForm />
           </div>
         </div>
