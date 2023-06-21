@@ -24,6 +24,7 @@ export default function LoginForm(){
                     variables: {
                         default: {
                           colors: {
+                            inputLabelText: 'gray',
                             inputText: 'gray'
                           },
                         },
