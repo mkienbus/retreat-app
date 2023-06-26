@@ -15,6 +15,7 @@ export default function AuthForm() {
       showLinks={false}
       providers={[]}
       redirectTo="http://localhost:3000/auth/callback"
+      session={sessionStorage}
     />
   )
 }
