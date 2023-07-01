@@ -14,7 +14,8 @@ export default function AccountForm({ session }) {
   const getProfile = useCallback(async () => {
     try {
       setLoading(true)
-
+//user data needs to be changed to match profiles db
+//first_name, last_name, email, password
       let { data, error, status } = await supabase
         .from('profiles')
         .select(`full_name, username, website, avatar_url`)

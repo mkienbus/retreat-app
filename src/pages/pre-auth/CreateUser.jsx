@@ -16,15 +16,15 @@ export default function Login() {
 
   const handleSignUp = async () => {
     await supabase.auth.signUp({
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password,
+        firstName,
+        lastName,
+        email,
+        password,
         options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
       },
     })
-    console.log({firstName, lastName, email, password}),
+    console.log(firstName, lastName, email, password)
     router.refresh()
   }
 
