@@ -5,20 +5,18 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 export default function AccountForm({ session }) {
   const supabase = createClientComponentClient()
   const [loading, setLoading] = useState(true)
-  const [fullname, setFullname] = useState(null)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [email, setEmail] = useState(null)
   const user = session?.user
 
   const getProfile = useCallback(async () => {
     try {
       setLoading(true)
-//user data needs to be changed to match profiles db
-//first_name, last_name, email, password
+
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`full_name, username, website, avatar_url`)
+        .select(`first_name, last_name, email`)
         .eq('id', user?.id)
         .single()
 
@@ -27,10 +25,9 @@ export default function AccountForm({ session }) {
       }
 
       if (data) {
-        setFullname(data.full_name)
-        setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
+        setFirstName(data.first_name)
+        setLastName(data.last_name)
+        setEmail(data.email)
       }
     } catch (error) {
       alert('Error loading user data!')
@@ -43,6 +40,8 @@ export default function AccountForm({ session }) {
     getProfile()
   }, [user, getProfile])
 
+  //user data needs to be changed to match profiles db
+  //first_name, last_name, email, password
   async function updateProfile({
     username,
     website,
