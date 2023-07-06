@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactForm from "../components/ContactForm"
 
 export default function ContactWebmaster(){
 
@@ -6,7 +7,7 @@ export default function ContactWebmaster(){
         <>
             <Link href="/">Home</Link>
             <div>
-                <h2>Contact webmaster form goes here</h2>
+                <ContactForm />
             </div>
         </>
     )
