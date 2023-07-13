@@ -10,12 +10,12 @@ export default function Admin(){
             <div className = {styles.adminLogin}>
                 <h2>Administrator portal</h2>
                 <LoginForm />
-            </div>
-            <footer>
+                <footer>
                 Need to register as an administrator?
                 <br/>
                 Contact webmaster <Link href="/pre-auth/ContactWebmaster">here</Link>
             </footer>
+            </div>
         </>
     )
 }
