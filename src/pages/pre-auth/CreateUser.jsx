@@ -16,10 +16,10 @@ export default function Login() {
 
   const handleSignUp = async () => {
     await supabase.auth.signUp({
-        firstName,
-        lastName,
-        email,
-        password,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
         options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
       },
@@ -32,17 +32,19 @@ export default function Login() {
     <>
         <Link href="/">Home</Link>
         <div className={styles.formContainer}>
-          <input placeholder="First name" name="firstName" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
-          <input placeholder="Last name" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} />
-          <input placeholder="Email address" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
-          <input
-              placeholder="Password (minimum of 6 characters)"
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-          />
-          <button onClick={handleSignUp}>Sign up</button>
+          <form onSubmit={handleSignUp}>
+            <input placeholder="First name" name="firstName" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
+            <input placeholder="Last name" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} />
+            <input placeholder="Email address" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <input
+                placeholder="Password (minimum of 6 characters)"
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+            />
+            <button type="submit">Sign up</button>
+          </form>
           <footer>
             Having issues registering?
             <br/>
