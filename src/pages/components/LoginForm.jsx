@@ -6,10 +6,7 @@ import {
     ThemeSupa,
   } from '@supabase/auth-ui-shared'
 
-const supabase = createClient(
-    'https://hmdjaftdjuwsgwzrhpef.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhtZGphZnRkanV3c2d3enJocGVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgzMTc3NDYsImV4cCI6MTk5Mzg5Mzc0Nn0.BHXLGuUoysTpPCy-ChXNudI336e8ylecTf6AQxbPXjI'
-    )
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
 
 export default function LoginForm(){
 

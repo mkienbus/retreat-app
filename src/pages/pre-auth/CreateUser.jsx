@@ -15,16 +15,23 @@ export default function Login() {
     const supabase = createClientComponentClient()
 
   const handleSignUp = async () => {
-    await supabase.auth.signUp({
-        first_name: firstName,
-        last_name: lastName,
+      const {data, error} = await supabase.auth.signUp({
+        // first_name: firstName,
+        // last_name: lastName,
         email: email,
         password: password,
         options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
+        data: {
+          first_name: firstName,
+          last_name: lastName,
+        },
       },
     })
-    console.log(firstName, lastName, email, password)
+    console.log("data: " + data.user)
+    console.log("error: " + error.message)
+    console.log("err status:" + error.status)
+    console.log("err stack: " + error.stack)
     router.refresh()
   }
 
