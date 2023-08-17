@@ -43,19 +43,18 @@ export default function AccountForm({ session }) {
   //user data needs to be changed to match profiles db
   //first_name, last_name, email, password
   async function updateProfile({
-    username,
-    website,
-    avatar_url,
+    firstName,
+    lastName,
+    email,
   }) {
     try {
       setLoading(true)
 
       let { error } = await supabase.from('profiles').upsert({
         id: user?.id,
-        full_name: fullname,
-        username,
-        website,
-        avatar_url,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
         updated_at: new Date().toISOString(),
       })
       if (error) throw error
@@ -74,30 +73,21 @@ export default function AccountForm({ session }) {
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="fullName">Full Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input
-          id="fullName"
+          id="firstName"
           type="text"
-          value={fullname || ''}
+          value={firstName || ''}
           onChange={(e) => setFullname(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="lastName">Last Name</label>
         <input
-          id="username"
+          id="lastName"
           type="text"
-          value={username || ''}
+          value={lastName || ''}
           onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
         />
       </div>
 
