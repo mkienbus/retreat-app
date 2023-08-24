@@ -13,6 +13,7 @@ export default function LoginForm(){
     return(
         <>
             <div className={styles.createUserFormParent}>
+            {/* https://supabase.com/docs/guides/auth/auth-helpers/nextjs */}
                 {/* customize Auth component by overriding the theme 
                 https://github.com/supabase/auth-ui/blob/main/packages/shared/src/theming/Themes.ts */}
                 <Auth
@@ -36,3 +37,12 @@ export default function LoginForm(){
         </>
     )
 }
+// https://supabase.com/docs/guides/auth/auth-helpers/nextjs
+// look into client side sign in method:
+// const handleSignIn = async () => {
+//   await supabase.auth.signInWithPassword({
+//     email,
+//     password,
+//   })
+//   router.refresh()
+// }

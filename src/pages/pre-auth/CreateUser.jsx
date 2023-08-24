@@ -15,7 +15,11 @@ export default function Login() {
     const supabase = createClientComponentClient()
 
   const handleSignUp = async () => {
-      let {data, error} = await supabase.auth.signUp({
+    //not redirecting to post auth page upon submission and email confirmation
+    //below was original code that worked at one point
+      //let {data, error} = await supabase.auth.signUp({
+        //below line is what is new on Supabase website
+        await supabase.auth.signUp({
         email: email,
         password: password,
         options: {
@@ -26,6 +30,7 @@ export default function Login() {
         },
       },
     })
+    console.log(email, firstName, lastName)
     router.refresh()
   }
 
@@ -33,7 +38,9 @@ export default function Login() {
     <>
         <Link href="/">Home</Link>
         <div className={styles.formContainer}>
-          <form onSubmit={handleSignUp}>
+          {/* Supabase was not receiving user input when using the 
+          <form></form> and <button type="submit" method */}
+          {/* <form onSubmit={handleSignUp}> */}
             <input placeholder="First name" name="firstName" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
             <input placeholder="Last name" name="lastName" onChange={(e) => setLastName(e.target.value)} value={lastName} />
             <input placeholder="Email address" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -44,8 +51,8 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
-            <button type="submit">Sign up</button>
-          </form>
+            <button onClick={handleSignUp}>Sign up</button>
+          {/* </form> */}
           <footer>
             Having issues registering?
             <br/>
