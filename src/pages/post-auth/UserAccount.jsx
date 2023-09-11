@@ -11,7 +11,8 @@ export default async function Account() {
 
   return (
     <>
-      <AccountForm session={session} />
+      <h1>User Account Landing</h1>
+      {/* <AccountForm session={session} /> */}
     </>
   )
 }

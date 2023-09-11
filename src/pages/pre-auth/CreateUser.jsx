@@ -16,8 +16,6 @@ export default function Login() {
 
   const handleSignUp = async () => {
     //not redirecting to post auth page upon submission and email confirmation
-    //below was original code that worked at one point
-      //let {data, error} = await supabase.auth.signUp({
         //below line is what is new on Supabase website
         await supabase.auth.signUp({
         email: email,
